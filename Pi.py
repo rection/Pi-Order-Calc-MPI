@@ -17,8 +17,8 @@ def pis():			#pis adinda fonksiyon tanimlamasi
         while N<SON:		#Girilen basamaga kadar gitmesini geldikten sonra durmasini soyler.
                 TOPLAM=TOPLAM+int((-1)**N)/float(2*N+1)		#Toplam degerin hesaplamasi sonrasinda Sizin verdiginiz hesaplama formulunu kullandim.
                 N=N+1						#Sayac tutulmustu bu sayede while dongusu sonlanacagi yere geldiginde duracaktir.
-                print "pi = ",4*TOPLAM				#Formulden gelen 4 ile carpma vardir ve sonucu bastirmistir.
-        
+                z=4*TOPLAM				#Formulden gelen 4 ile carpma vardir ve sonucu bastirmistir.
+        print z
 
 if comm.rank == 0:			#sifirinci  yani main cekirdek atatigimiz degere gelince asagidakini uygula anlamina geliyor. 
         for i in range(1,size):		#size degiskeni yukarda kac cekirdege sahip oldugumuzu gosterir. 
