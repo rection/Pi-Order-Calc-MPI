@@ -1,4 +1,4 @@
-image: python:latest
+image: python:2.7
 
 before_script:
   - uname -a
@@ -6,7 +6,7 @@ before_script:
 
 test:
   script:
-  - apt-get update && apt-get upgrade 
+  - apt-get update -y && apt-get upgrade -y
   - apt-get install mpich gcc gfortran wget python-mpi4py python-numpy -y
   - apt-get install 
   - mkdir /nfs
@@ -19,4 +19,4 @@ test:
   - python setup.py build --mpi=other_mpi
   - python setup.py install
   - cd /builds/rection/Pi-Order-Calc-MPI
-  - mpiexec -n 4 --allow-run-as-root python2.7 Pi.py
+  - mpiexec -n 4 --allow-run-as-root --use-hwthread-cpus python2.7 Pi.py
